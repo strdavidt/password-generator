@@ -14,7 +14,7 @@ body {
     border-radius: 20px;
     backdrop-filter: blur(10px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    max-width: 500px;
+    max-width: 100%;
     width: 100%;
     padding: 2.5rem;   
 }
@@ -23,7 +23,7 @@ body {
     font-weight: 700;
     margin-bottom: 0.5rem;
     line-height: 1.2;
-    text-align: left;
+    text-align: center;
     color: #FFFFFF;
 }
 .destacado {
@@ -33,7 +33,7 @@ body {
     color: #a0aec0;
     font-size: 1.1rem;
     margin-bottom: 1rem;
-    text-align: left;
+    text-align: center;
 }
 .generar-btn {
     background: #10B981;
@@ -48,18 +48,19 @@ body {
 }
 .caracteres {
     margin: 1rem 0;
-    text-align: left;
+    text-align: center;
 }
 .form-label {
     color: #FFFFFF;
     margin: 0.5rem 0;
 }
 #numCaracteres {
-    margin: 1rem 0;
+    margin: 1rem auto;
     padding: 16px 8px;
     border-radius: 15px;
     background-color: #2d3748;
     color: #FFFFFF;
+    max-width: 50%;
 }
 .generar-btn:hover {
     background: #0b845b;
@@ -71,7 +72,7 @@ body {
     transform: translateY(0);
 }
 .contraseñas-contenedor {
-    margin-top: 3rem;
+    margin-top: 1rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     
 }
@@ -79,7 +80,7 @@ body {
     background: rgba(26, 32, 44, 0.8);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
-    padding: 1rem 1.25rem;
+    padding: 16px 8px;
     font-family: 'Courier New', Monaco, monospace;
     font-size: 1rem;
     color: #48cc6c;
@@ -87,7 +88,8 @@ body {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    margin: 2rem 0;
+    margin: 2rem auto;
+    width: 70%;
 }
 .contraseñaEl:hover {
     background: rgba(26, 32, 44, 0.9);
@@ -103,3 +105,33 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+@media (max-width: 768px) {
+      /* Tus estilos específicos para pantallas de hasta 768px de ancho */
+      .titulo-h1 {
+        font-size: 1rem;
+      }
+      .slogan-p {
+        font-size: 0.9rem;
+      }
+      .form-label {
+        font-size: 0.7rem;
+      }
+      #numCaracteres {
+        width: 100%;
+        padding: 10px 8px;
+        font-size: 0.9rem;
+      }
+      .generar-btn {
+        width: 100%;
+        padding: 12px 0;
+        font-size: 1rem;
+      }
+      .contraseñas-contenedor {
+        margin-top: 1.5rem;
+      }
+      .contraseñaEl {
+        font-size: 0.9rem;
+        padding: 0.8rem 1rem;
+        margin: 1rem 0;
+      }
+    }
