@@ -108,29 +108,29 @@ input[type="number"] {
 @media (max-width: 768px) {
       /* Tus estilos específicos para pantallas de hasta 768px de ancho */
       .titulo-h1 {
-        font-size: 1rem;
+        font-size: 2rem;
       }
       .slogan-p {
-        font-size: 0.9rem;
+        font-size: 1.9rem;
       }
       .form-label {
-        font-size: 0.7rem;
+        font-size: 1.7rem;
       }
       #numCaracteres {
         width: 100%;
         padding: 10px 8px;
-        font-size: 0.9rem;
+        font-size: 1.9rem;
       }
       .generar-btn {
         width: 100%;
         padding: 12px 0;
-        font-size: 1rem;
+        font-size: 2rem;
       }
       .contraseñas-contenedor {
         margin-top: 1.5rem;
       }
       .contraseñaEl {
-        font-size: 0.9rem;
+        font-size: 1.9rem;
         padding: 0.8rem 1rem;
         margin: 1rem 0;
       }
