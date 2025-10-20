@@ -14,7 +14,7 @@ body {
     border-radius: 20px;
     backdrop-filter: blur(10px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    max-width: 100%;
+    max-width: 80%;
     width: 100%;
     padding: 2.5rem;   
 }
@@ -89,7 +89,7 @@ body {
     position: relative;
     overflow: hidden;
     margin: 2rem auto;
-    width: 70%;
+    width: 50%;
 }
 .contraseñaEl:hover {
     background: rgba(26, 32, 44, 0.9);

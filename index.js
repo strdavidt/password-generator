@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
         navigator.clipboard.writeText(resultado)
             .then(() => {
                 console.log("Contraseña copiada al portapapeles: " + resultado);
+                guardarBtn(resultado)
             })
             .catch(err => {
                 console.error("Error al copiar la contraseña: ", err);
@@ -51,5 +52,9 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     if (generarBtn) {
         generarBtn.addEventListener("click", generarContraseña);
+    }
+
+    function guardarBtn(resultado) {
+        console.log(resultado)
     }
 });
