@@ -1,0 +1,14 @@
+# Environment variables
+.env
+
+# Node modules (si usas npm/node)
+node_modules/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+firebase-config.js
