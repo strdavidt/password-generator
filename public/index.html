@@ -17,7 +17,7 @@
                 <p class="slogan-p">Nunca uses una contraseña insegura otra vez.</p>
                 <div class="caracteres">
                     <label for="numCaracteres" class="form-label">Número de caracteres:</label>
-                    <input type="number" id="numCaracteres" name="numCaracteres" class="form-control" min="1" max="100" value="12">  
+                    <input type="number" id="numCaracteres" name="numCaracteres" class="form-control" min="1" max="100" value="24">  
                 </div>
                 <button id="generar-btn" type="button" class="generar-btn">Generar</button>
             </div>
@@ -32,9 +32,10 @@
             </div>
         </div>
     </div>
-    <div class="login_form" id="login_form">
+    <div class="backdrop" id="backdrop" aria-hidden="true"></div>
+    <div class="login_form" id="login_form" role="dialog" aria-modal="true" aria-labelledby="login_title">
         <form action="#">
-            <h3>Log in with</h3>
+            <h3 id="login_title">Iniciar sesión con</h3>
 
             <div class="login_option">
                 <!-- Google button -->
@@ -56,32 +57,33 @@
 
             <!-- Login option separator -->
             <p class="separator">
-                <span>or</span>
+                <span>o</span>
             </p>
 
             <!-- Email input box -->
             <div class="input_box">
-                <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Enter email address" required />
+                <label for="email">Correo</label>
+                <input type="email" id="email" placeholder="Ingrese su correo" required />
             </div>
 
             <!-- Paswwrod input box -->
             <div class="input_box">
                 <div class="password_title">
-                    <label for="password">Password</label>
-                    <a href="#">Forgot Password?</a>
+                    <label for="password">Contraseña</label>
+                    <a href="#">¿Olvidaste tu contraseña?</a>
                 </div>
 
-                <input type="password" id="password" placeholder="Enter your password" required />
+                <input type="password" id="password" placeholder="Ingrese su contraseña" required />
             </div>
 
             <!-- Login button -->
-            <button type="submit">Log In</button>
+            <button type="submit">Iniciar sesión</button>
 
-            <p class="sign_up">Don't have an account? <a href="#">Sign up</a></p>
+            <p class="sign_up">¿No tienes una cuenta? <a href="#">Regístrate</a></p>
+            <p class="sign_up" id="nologin-p"><a href="#">Continuar sin cuenta</a></p>
         </form>
     </div>
-    <script src="../src/index.js"></script>
+    <script src="js/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
     <script type="module" src="../src/firebase-config.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>

@@ -1,7 +1,29 @@
 document.addEventListener("DOMContentLoaded", function() {
     const modal = document.getElementById("login_form");
-    setTimeout(function() {
+    const backdrop = document.getElementById("backdrop");
+
+    function showModal() {
+        if (!modal) return;
         modal.style.display = "block";
+        document.body.classList.add("modal-open");
+        if (backdrop) {
+            backdrop.setAttribute("aria-hidden", "false");
+        }
+    }
+
+    function hideModal() {
+        if (!modal) return;
+        modal.style.display = "none";
+        document.body.classList.remove("modal-open");
+        caracteresN.focus();
+        if (backdrop) {
+            backdrop.setAttribute("aria-hidden", "true");
+        }
+    }
+
+    setTimeout(function() {
+        console.log("Mostrando el modal de inicio de sesión");
+        showModal();
     }, 1500); // Mostrar el modal después de 1.5 segundos (1500 ms)
     const caracteresA = [
     "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",
@@ -12,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const caracteresN = document.getElementById("numCaracteres");
     const generarBtn = document.getElementById("generar-btn");
     const contraseña1 = document.getElementById("contraseña1");
+    const nologinP = document.getElementById("nologin-p");
 
     function generarContraseña() {
         let contraseñaGenerada = "";
@@ -61,4 +84,18 @@ document.addEventListener("DOMContentLoaded", function() {
     function guardarBtn(resultado) {
         console.log(resultado)
     }
+    if (nologinP) {
+        nologinP.addEventListener("click", hideModal);
+    }
+    /*
+    // Opcional: cerrar al hacer clic en el backdrop o con ESC
+    if (backdrop) {
+        backdrop.addEventListener("click", hideModal);
+    }
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modal && modal.style.display === "block") {
+            hideModal();
+        }
+    });
+    */
 });

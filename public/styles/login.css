@@ -21,13 +21,20 @@
 
 /* Login form styling */
 .login_form {
+    color: #fff;
     width: 100%;
     max-width: 435px;
-    background: #fff;
+    background-color: #1F2937;
     border-radius: 6px;
-    padding: 41px 30px;
+    padding: 30px 30px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
     margin: auto auto;
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 .login_form h3 {
@@ -37,9 +44,10 @@
 
 /* Google & Apple button styling */
 
-.login_form .login_option {
+.login_option {
     display: flex;
     width: 100%;
+    z-index: 9999;
     justify-content: space-between;
     align-items: center;
 }
@@ -54,18 +62,18 @@
     justify-content: center;
     align-items: center;
     gap: 12px;
-    background: #F8F8FB;
+    background: rgba(26, 32, 44, 0.8);
     border: 1px solid #DADAF2;
     border-radius: 5px;
     margin: 34px 0 24px 0;
     text-decoration: none;
-    color: #171645;
+    color: #fff;
     font-weight: 500;
     transition: 0.2s ease;
 }
 
 .login_form .login_option .option a:hover {
-    background: #ededf5;
+    background: #080039;
     border-color: #626cd6;
 }
 
@@ -85,7 +93,8 @@
 
 /* Login option separator styling */
 .login_form .separator span {
-    background: #fff;
+    background-color: #1F2937;
+    color: #fff;
     z-index: 1;
     padding: 0 10px;
     position: relative;
@@ -115,8 +124,9 @@ form .input_box input {
     border: 1px solid #DADAF2;
     border-radius: 5px;
     outline: none;
-    background: #F8F8FB;
+    background: rgba(26, 32, 44, 0.8);
     font-size: 17px;
+    color: #fff;
     padding: 0px 20px;
     margin-bottom: 25px;
     transition: 0.2s ease;
@@ -153,10 +163,10 @@ form button {
     border-radius: 5px;
     border: none;
     outline: none;
-    background: #626CD6;
+    background: #10B981;
     color: #fff;
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 700;
     text-transform: uppercase;
     cursor: pointer;
     margin-bottom: 28px;
@@ -164,5 +174,36 @@ form button {
 }
 
 form button:hover {
-    background: #4954d0;
+    background: #1d792c;
+}
+
+/* Full-screen backdrop with blur */
+.backdrop {
+    position: fixed;
+    inset: 0; /* top:0; right:0; bottom:0; left:0 */
+    background: rgba(0, 0, 0, 0.25); /* subtle dim */
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; /* no bloquear clics cuando está oculta */
+    transition: opacity 200ms ease, visibility 200ms ease;
+    z-index: 9998;
+}
+
+.backdrop.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Mostrar blur sólo cuando el modal está visible */
+body.modal-open .backdrop {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* Evitar scroll del fondo al abrir modal */
+body.modal-open {
+    overflow: hidden;
 }
